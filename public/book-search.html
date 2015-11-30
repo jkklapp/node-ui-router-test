@@ -1,0 +1,25 @@
+ <div class="form-group">
+  <div class="text-center" ng-hide="filtered.length == 0">
+    <h1><span class="label label-info">{{ filtered.length }}</span> flights found!</h1>
+  </div>
+  <div class="destinations">
+    <span ng-repeat="destination in filtered = (destinations | filter: search)">
+      <button class="btn" ng-click="selectDestination(destination)">{{ destination }}</button>
+    </span>
+  </div>
+</div>
+
+<div class="form-group">
+  <span>Or refine your search: </span><input class="form-control" type="text" ng-model="search">
+</div>
+
+<div ng-show="filtered.length == 0">
+  <span>No available flights</span>
+</div>
+<div class="form-group row">
+  <div class="col-xs-6 col-xs-offset-3">
+      <a ui-sref="book.dates" class="btn btn-block btn-info">
+      Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+      </a>
+  </div>
+</div>

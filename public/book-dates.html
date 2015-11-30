@@ -1,0 +1,50 @@
+<div class="dates-container">
+  <label>When do you want to fly to {{formData.destination}}?</label>
+  <div ng-controller="datepickerController as c">
+    <div class="form-group">
+      <div class="input-group dates">
+          <input type="text"
+            class="form-control date"
+            id="dateFrom"
+            placeholder="From"
+            ng-click="c.dateFrom=true"
+            datepicker-popup="{{c.format}}"
+            ng-model="formData.dtFrom"
+            is-open="c.dateFrom"
+            datepicker-options="c.dateOptions"
+            date-disabled="disabled(date, mode)"
+            ng-required="true"
+            close-text="Close" >
+
+          <input type="text"
+            class="form-control date"
+            id="dateTo"
+            placeholder="To"
+            ng-click="c.dateTo=true"
+            datepicker-popup="{{c.format}}"
+            ng-model="formData.dtTo"
+            is-open="c.dateTo"
+            min-date="dtFrom"
+            datepicker-options="c.dateOptions"
+            date-disabled="disabled(date, mode)"
+            ng-required="true"
+            close-text="Close" >
+      </div>
+    </div>
+    <div class="form-group text-center">
+      <h4 ng-show="formData.dtFrom">Departure {{formData.dtFrom | date}}</h4>
+      <h4 ng-show="formData.dtTo">Return {{formData.dtTo | date}}</h4>
+    </div>
+    <div ng-show="formData.dtTo && formData.dtFrom" class="form-group text-center">
+      <h3>Best price found: {{formData.price}}$</h3>
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+<div class="col-xs-6 col-xs-offset-3">
+    <a ui-sref="book.profile" class="btn btn-block btn-info">
+    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>

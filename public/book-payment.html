@@ -1,0 +1,11 @@
+<div class="text-center">
+    <span class="glyphicon glyphicon-heart"></span>
+    <h3>You have successfully booked a flight! Yay!</h3>
+    <div>
+    <span>{{ formData.name }}... You are flying to {{formData.destination}}</span>
+    <span> on the {{ formData.dtFrom | date }}</span>
+    <span > and you will be back {{ formData.dtTo | date }}</span>
+    <span > for only {{formData.price}}$!</span>
+    <span>Confirmation has been sent to {{ formData.email }}</span>
+    </span>
+</div>
