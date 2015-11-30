@@ -1,11 +1,11 @@
 # ui-router multistep form test app
 
-A Node app built with MongoDB and Angular. For demonstrating ui-router.
+A Node app built with MongoDB and Angular. For demonstrating ui-router. Nothing happens in the backend, but basic API routes are provided ot make CRUD operations in the database.
 
 ## Requirements
 
 - [Node and npm](http://nodejs.org)
-- [Angular]
+- [Angular](https://angularjs.org/)
 
 ## Installation
 
